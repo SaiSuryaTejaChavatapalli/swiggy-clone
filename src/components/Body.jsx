@@ -2,8 +2,8 @@ import { useEffect, useState, useContext } from "react";
 import UserContext from "../utils/context/UserContext";
 import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
-import Shimmer from "./Shimmer";
 import useOnline from "../utils/useOnline";
+import BodyShimmer from "./BodyShimmer";
 function filterData(searchText, restaurants) {
   const filteredData = restaurants.filter((restaurant) => {
     return restaurant?.data?.name
@@ -39,11 +39,11 @@ const Body = () => {
   }
 
   return filteredRestaurants.length === 0 ? (
-    <Shimmer />
+    <BodyShimmer />
   ) : (
-    <div className="search-container p-5 bg-pink-50 my-5 ">
+    <div className="search-container p-5 mx-16 ">
       <input
-        className="search-input"
+        className="search-input ml-5"
         data-testid="search-input"
         type="text"
         placeholder="Search..."
@@ -62,27 +62,10 @@ const Body = () => {
       >
         Search
       </button>
-      <input
-        type="text"
-        value={user.name}
-        onChange={(e) =>
-          setUser({
-            ...user,
-            name: e.target.value,
-          })
-        }
-      ></input>
-      <input
-        type="text"
-        value={user.email}
-        onChange={(e) =>
-          setUser({
-            ...user,
-            email: e.target.value,
-          })
-        }
-      ></input>
-      <div className="restaurant-list flex flex-wrap" data-testid="res-list">
+      <div
+        className="restaurant-list flex flex-wrap justify-around"
+        data-testid="res-list"
+      >
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link

@@ -1,20 +1,33 @@
 import { useState, useEffect } from "react";
 import { FETCH_MENU_URL } from "../constants";
 const useRestaurantMenu = (resId) => {
-  const [restaurants, setRestaurants] = useState(null);
-
+  const [restaurantMenus, setRestaurantMenus] = useState([{}]);
+  const [restaurantHeadData, setRestaurantHeadData] = useState([]);
+  const newData = [];
   async function getRestaurantsMenu() {
-    const data = await fetch(FETCH_MENU_URL + resId);
-    const json = await data?.json();
-    console.log(json);
-    setRestaurants(json?.data?.cards[0]?.card?.card?.info);
+    const response = await fetch(FETCH_MENU_URL + resId);
+    const data = await response?.json();
+    setRestaurantHeadData(data?.data?.cards?.[0]?.card?.card?.info);
+    data?.data?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR.cards?.map(
+      (item) => {
+        item?.card?.card?.itemCards?.map((innerItem) => {
+          // console.log(innerItem?.card?.info);
+          const { name, price, imageId, description, itemAttribute } =
+            innerItem?.card?.info;
+          // console.log({ name, price, imageId, description, itemAttribute });
+          newData.push({ name, price, imageId, description, itemAttribute });
+        });
+      }
+    );
+
+    setRestaurantMenus(newData);
   }
 
   useEffect(() => {
     getRestaurantsMenu();
   }, []);
 
-  return restaurants;
+  return [restaurantMenus, restaurantHeadData];
 };
 
 export default useRestaurantMenu;

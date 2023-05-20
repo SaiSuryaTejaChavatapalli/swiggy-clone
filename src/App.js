@@ -8,12 +8,13 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
-import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/context/UserContext";
-import Cart from "./components/Cart";
 import { Provider } from "react-redux";
 import store from "./utils/redux/store";
 import Demo from "./components/Demo";
+import BodyShimmer from "./components/BodyShimmer";
+import CartPage from "./components/CartPage";
+import Demo2 from "./components/Demo2";
 // import Instamart from "./components/Instamart";
 
 const Instamart = lazy(() => import("./components/Instamart"));
@@ -47,12 +48,12 @@ const appRouter = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/contact", element: <Contact /> },
       { path: "/restaurants/:resId", element: <RestaurantMenu /> },
-      { path: "/cart", element: <Cart /> },
-      { path: "/demo", element: <Demo /> },
+      { path: "/cart", element: <CartPage /> },
+      { path: "/demo", element: <Demo2 /> },
       {
         path: "/instamart",
         element: (
-          <Suspense fallback={<Shimmer />}>
+          <Suspense fallback={<BodyShimmer />}>
             <Instamart />
           </Suspense>
         ),

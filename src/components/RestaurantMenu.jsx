@@ -5,12 +5,13 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/redux/cartSlice";
 import BodyShimmer from "./BodyShimmer";
+import RestaurantMenuShimmer from "./RestaurantMenuShimmer";
 const RestaurantMenu = () => {
   const params = useParams();
   // const [restaurants, setRestaurants] = useState(null);
   const { resId } = params;
   const [restaurantsMenus, restaurantHeadData] = useRestaurantMenu(resId);
-  console.log(restaurantHeadData);
+  console.log("Initial", restaurantsMenus);
   const {
     name: restaurantName,
     areaName: restaurantAreaName,
@@ -40,6 +41,7 @@ const RestaurantMenu = () => {
       })
     );
   };
+  // return <RestaurantMenuShimmer />;
   return (
     <>
       <div className="flex justify-center items-center mt-10">
@@ -72,10 +74,22 @@ const RestaurantMenu = () => {
 
       <div>
         {restaurantsMenus?.map((menu) => (
-          <div className="flex items-center justify-center">
+          <div
+            className="flex items-center justify-center"
+            key={menu?.menuItemId}
+          >
             <div className="flex border border-y-gray-400 border-x-0 m-2  justify-between w-1/2">
               <div className="mt-4">
-                <span className="">Veg</span>
+                {menu?.itemAttribute?.vegClassifier === "VEG" ? (
+                  <span className="text-green-600 font-semibold text-xs">
+                    Veg
+                  </span>
+                ) : (
+                  <span className="text-red-600 font-semibold text-xs">
+                    Non Veg
+                  </span>
+                )}
+
                 <h1 className="font-semibold">{menu?.name}</h1>
                 <h2 className="text-sm">₹{menu?.price / 100 || "220"}</h2>
                 <h3 className="text-gray-400 text-xs mt-4">

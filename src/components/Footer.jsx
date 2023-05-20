@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div
       data-testid="footer"
-      className="bg-black flex items-center justify-center "
+      className="bg-black flex items-center justify-center mt-auto"
     >
       <h1 className="text-white my-5">
         This Page is developed by {user.name}-{user.email}

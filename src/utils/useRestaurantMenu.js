@@ -12,10 +12,23 @@ const useRestaurantMenu = (resId) => {
       (item) => {
         item?.card?.card?.itemCards?.map((innerItem) => {
           // console.log(innerItem?.card?.info);
-          const { name, price, imageId, description, itemAttribute } =
-            innerItem?.card?.info;
+          const {
+            name,
+            price,
+            imageId,
+            description,
+            itemAttribute,
+            id: menuItemId,
+          } = innerItem?.card?.info;
           // console.log({ name, price, imageId, description, itemAttribute });
-          newData.push({ name, price, imageId, description, itemAttribute });
+          newData.push({
+            name,
+            price,
+            imageId,
+            description,
+            itemAttribute,
+            menuItemId,
+          });
         });
       }
     );

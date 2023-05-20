@@ -23,7 +23,7 @@ const Section = ({ title, description, isVisible, setIsVisible, id }) => {
 const Instamart = () => {
   const [visibleSection, setVisibleSection] = useState("");
   return (
-    <div>
+    <div className="">
       <Section
         title="About Instamart"
         description={

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 const useOnline = () => {
-  console.count("k");
   const [isOnline, setIsOnline] = useState(true);
 
   const handleOnline = () => {

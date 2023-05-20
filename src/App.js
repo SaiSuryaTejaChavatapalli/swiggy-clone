@@ -15,6 +15,7 @@ import Demo from "./components/Demo";
 import BodyShimmer from "./components/BodyShimmer";
 import CartPage from "./components/CartPage";
 import Demo2 from "./components/Demo2";
+import RestaurantMenuShimmer from "./components/RestaurantMenuShimmer";
 // import Instamart from "./components/Instamart";
 
 const Instamart = lazy(() => import("./components/Instamart"));
@@ -49,7 +50,7 @@ const appRouter = createBrowserRouter([
       { path: "/contact", element: <Contact /> },
       { path: "/restaurants/:resId", element: <RestaurantMenu /> },
       { path: "/cart", element: <CartPage /> },
-      { path: "/demo", element: <Demo2 /> },
+      { path: "/demo", element: <RestaurantMenuShimmer /> },
       {
         path: "/instamart",
         element: (

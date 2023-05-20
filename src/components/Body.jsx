@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import useOnline from "../utils/useOnline";
 import BodyShimmer from "./BodyShimmer";
+import { restaurantHomeDataUrl } from "../constants";
 function filterData(searchText, restaurants) {
   const filteredData = restaurants.filter((restaurant) => {
     return restaurant?.data?.name
@@ -24,9 +25,7 @@ const Body = () => {
   }, []);
 
   async function getRestaurants() {
-    const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5904779&lng=73.7271909&page_type=DESKTOP_WEB_LISTING"
-    );
+    const data = await fetch(restaurantHomeDataUrl);
     const json = await data.json();
     //optional chaining
     setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);

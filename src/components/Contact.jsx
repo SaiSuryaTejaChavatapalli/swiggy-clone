@@ -1,9 +1,10 @@
-import React from "react";
+import { useRef } from "react";
 import { TextField } from "@mui/material";
 import { Button } from "@mui/material";
 import SendIcon from "@mui/icons-material/Send";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
 const Contact = () => {
   const form = useForm({
     defaultValues: {
@@ -13,10 +14,26 @@ const Contact = () => {
     },
   });
   const { register, handleSubmit, formState, reset } = form;
+  const contactFormData = useRef();
   const { errors } = formState;
   console.log("errors", errors);
   const handleContactForm = (data) => {
     console.log(data);
+    emailjs
+      .sendForm(
+        "service_yzvc9oe",
+        "template_qkzy0bm",
+        contactFormData.current,
+        "2-q4SBx0d-XIJnAYy"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
   };
   return (
     <>
@@ -27,6 +44,7 @@ const Contact = () => {
         className="flex flex-col items-center justify-center gap-4 w-full mt-3"
         noValidate
         onSubmit={handleSubmit(handleContactForm)}
+        ref={contactFormData}
       >
         <TextField
           type="text"

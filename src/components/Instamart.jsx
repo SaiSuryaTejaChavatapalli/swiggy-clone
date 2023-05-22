@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Section = ({ title, description, isVisible, setIsVisible, id }) => {
   return (
     <div className="border border-black p-2 m-2">
-      <h1 className="font-bold text-3xl">{title}</h1>
+      <h1 className="font-bold text-3xl text-gray-600">{title}</h1>
 
       {isVisible ? (
         <button className="underline" onClick={() => setIsVisible("")}>
@@ -27,7 +27,7 @@ const Instamart = () => {
       <Section
         title="About Instamart"
         description={
-          "With the rise of internet orders, particularly in the food and grocery industries, in recent years Swiggy has started its latest initiative, Instamart, with the goal of delivering groceries and other necessities.Instamart is a chain of online convenience stores. Instant meals, snacks, fruits and vegetables, ice creams, and other things are available through these virtual convenience stores.Swiggy provides these things through its partner “dark stores,” which are exclusively available online and its hubs."
+          "Instamart is an innovative online grocery delivery service that brings the convenience of shopping for groceries right to your doorstep. With a user-friendly mobile app and a vast selection of high-quality products, Instamart aims to make grocery shopping a hassle-free experience. We prioritize customer satisfaction, offering timely deliveries and excellent customer service. Our mission is to simplify the lives of busy individuals by providing them with a reliable and efficient way to fulfill their grocery needs."
         }
         isVisible={visibleSection === "about"}
         id="about"
@@ -36,7 +36,7 @@ const Instamart = () => {
       <Section
         title="Team Instamart"
         description={
-          "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains."
+          "The dedicated and talented team at Instamart is the driving force behind our success. Comprised of passionate individuals from diverse backgrounds, our team shares a common goal of revolutionizing the grocery shopping experience. From tech experts to logistics specialists, customer service representatives to marketing professionals, each member of Team Instamart plays a crucial role in ensuring the smooth operation of our service. We foster a collaborative and inclusive work environment, encouraging creativity, growth, and innovation."
         }
         isVisible={visibleSection === "team"}
         id="team"
@@ -45,7 +45,7 @@ const Instamart = () => {
       <Section
         title="Career at Instamart"
         description={
-          "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue; and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures pains to avoid worse pains. "
+          "Instamart offers exciting career opportunities for individuals looking to be part of a dynamic and rapidly growing company. We value talent, dedication, and a passion for making a difference. Whether you're interested in technology, logistics, customer service, or marketing, we have a variety of roles that cater to different skill sets and aspirations. At Instamart, you'll have the chance to work with a talented team, contribute to a meaningful mission, and shape the future of the grocery industry. We provide a supportive work environment, continuous learning opportunities, and competitive compensation packages to help you thrive in your career. Join us and be part of the Instamart revolution!"
         }
         id="career"
         isVisible={visibleSection === "career"}

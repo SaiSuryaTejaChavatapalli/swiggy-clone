@@ -118,7 +118,9 @@ const CartPage = () => {
                   100% refund will be issued. No refund for cancellations made
                   after 60 seconds. Avoid cancellation as it leads to food
                   wastage.
-                  <div className="underline">Read cancellation policy</div>
+                  <div className="underline cursor-pointer">
+                    Read cancellation policy
+                  </div>
                 </div>
               </div>
             </div>

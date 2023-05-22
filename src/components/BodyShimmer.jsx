@@ -1,6 +1,6 @@
 const BodyShimmer = () => {
   return (
-    <div className="flex flex-wrap mx-20 mt-16">
+    <div className="flex flex-wrap justify-between mx-20 mt-16">
       {Array(16)
         .fill("")
         .map((item, id) => (

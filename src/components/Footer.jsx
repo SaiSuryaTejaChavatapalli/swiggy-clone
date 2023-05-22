@@ -15,7 +15,7 @@ const Footer = () => {
     >
       <h1 className="text-white my-5 flex items-center gap-3">
         <div>
-          <CopyrightIcon />
+          <CopyrightIcon className="mr-2" />
           This Page is developed by {user.name}-{user.email}
         </div>
         <div className="flex gap-4">

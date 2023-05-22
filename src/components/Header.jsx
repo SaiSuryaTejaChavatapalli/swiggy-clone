@@ -24,7 +24,7 @@ const Header = () => {
   const itemsList = useSelector((store) => store.cart.items);
   const { user } = useContext(UserContext);
   return (
-    <div className="flex justify-between shadow-lg my-0 mr-3">
+    <div className="flex justify-between shadow-md my-0 mr-3">
       <Title />
       <div className="mr-3">
         <ul className="flex py-10">
@@ -64,10 +64,12 @@ const Header = () => {
           </li>
           {isLoggedIn === true ? (
             <li className="px-2">
-              <span className="mr-2 hover:text-orangehover">{user.name}</span>
+              <span className="mr-2 hover:text-orangehover cursor-pointer">
+                {user.name}
+              </span>
               <span onClick={() => setIsLoggedIn(!isLoggedIn)}>
                 <LogoutIcon
-                  className="text-[5px] text-gray-700 cursor-pointer"
+                  className="text-[5px] text-gray-700 cursor-pointer hover:text-orangehover"
                   title
                 />
               </span>
@@ -75,9 +77,9 @@ const Header = () => {
           ) : (
             <div
               onClick={() => setIsLoggedIn(!isLoggedIn)}
-              className="cursor-pointer"
+              className="cursor-pointer hover:text-orangehover"
             >
-              Login
+              LOGIN
             </div>
           )}
 

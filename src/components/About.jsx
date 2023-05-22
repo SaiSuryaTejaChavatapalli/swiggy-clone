@@ -1,4 +1,6 @@
 import AboutImg from "../utils/assets/about-img.jpg";
+import GooglePlayImg from "../utils/assets/icon-app-store.jpg";
+import AppStoreImg from "../utils/assets/icon-google-play.jpg";
 const About = () => {
   return (
     <div className="flex">
@@ -32,6 +34,10 @@ const About = () => {
           will further grow at an annual growth rate of 11.92%, thereby becoming
           $21.95 bn by 2026.
         </p>
+        <div className="flex gap-6">
+          <img src={GooglePlayImg} />
+          <img src={AppStoreImg} />
+        </div>
       </div>
     </div>
   );

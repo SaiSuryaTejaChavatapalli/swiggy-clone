@@ -4,7 +4,7 @@ const PaymentField = () => {
   const [selectedPayment, setSelectedPayment] = useState("");
   return (
     <div>
-      <div className="font-bold text-gray-600 text-2xl">Payment</div>
+      <div className="font-bold text-gray-600 text-2xl">Payment:</div>
       <div className="m-4 w-full">
         <button
           type="button"

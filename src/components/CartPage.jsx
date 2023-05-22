@@ -40,7 +40,7 @@ const CartPage = () => {
                     className="flex justify-between  items-center m-1 "
                     key={index}
                   >
-                    <div className="w-52 text-sm flex items-center gap-2">
+                    <div className="w-52 text-sm flex items-center justify-start gap-2">
                       {item?.itemAttribute?.vegClassifier === "VEG" ? (
                         <img src={VegIcon} alt="veg-icon" className="w-4" />
                       ) : (
@@ -50,9 +50,9 @@ const CartPage = () => {
                           className="w-4"
                         />
                       )}
-                      <span>{item.name}</span>
+                      <span className="justify-start">{item.name}</span>
                     </div>
-                    <div className="border border-gray-600">
+                    <div className="border border-gray-600 justify-start">
                       <button
                         className=" p-1 "
                         onClick={() => dispatch(removeItem(item))}
@@ -60,7 +60,6 @@ const CartPage = () => {
                         -
                       </button>
                       <span className=" text-green-700 font-bold">
-                        {" "}
                         {item.quantity}
                       </span>
                       <button

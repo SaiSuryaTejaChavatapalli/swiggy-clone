@@ -32,7 +32,7 @@ const Contact = () => {
         (result) => {
           console.log(result.text);
           toast.success("Thanks for contacting us,We will get back to you!", {
-            position: "bottom-right",
+            position: "top-center",
             autoClose: 5000,
             hideProgressBar: false,
             closeOnClick: true,
@@ -129,7 +129,7 @@ const Contact = () => {
         </div>
       </form>
       <ToastContainer
-        position="bottom-center"
+        position="top-center"
         autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}

@@ -5,7 +5,8 @@ import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
-
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -56,7 +57,9 @@ export default function CustomizedAccordions({ addressField, paymentField }) {
         onChange={handleChange("panel1")}
       >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Address</Typography>
+          <Typography>
+            <LocationOnIcon className="m-2 text-gray-700" /> Address
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>{addressField}</Typography>
@@ -67,7 +70,10 @@ export default function CustomizedAccordions({ addressField, paymentField }) {
         onChange={handleChange("panel2")}
       >
         <AccordionSummary aria-controls="panel2d-content" id="panel2d-header">
-          <Typography>Payment</Typography>
+          <Typography>
+            <AccountBalanceWalletIcon className="m-2 text-gray-700" />
+            Payment
+          </Typography>
         </AccordionSummary>
         <AccordionDetails>
           <Typography>{paymentField}</Typography>

@@ -16,6 +16,8 @@ import BodyShimmer from "./components/BodyShimmer";
 import CartPage from "./components/CartPage";
 import Demo2 from "./components/Demo2";
 import RestaurantMenuShimmer from "./components/RestaurantMenuShimmer";
+import { Accordion } from "@mui/material";
+import CustomizedAccordions from "./utils/CustomizedAccordian";
 // import Instamart from "./components/Instamart";
 
 const Instamart = lazy(() => import("./components/Instamart"));
@@ -32,9 +34,11 @@ const AppLayout = () => {
           setUser: setUser,
         }}
       >
-        <Header />
-        <Outlet />
-        <Footer />
+        <div className="h-screen flex flex-col">
+          <Header />
+          <Outlet />
+          <Footer />
+        </div>
       </UserContext.Provider>
     </Provider>
   );
@@ -50,7 +54,7 @@ const appRouter = createBrowserRouter([
       { path: "/contact", element: <Contact /> },
       { path: "/restaurants/:resId", element: <RestaurantMenu /> },
       { path: "/cart", element: <CartPage /> },
-      { path: "/demo", element: <RestaurantMenuShimmer /> },
+      { path: "/demo", element: <CustomizedAccordions /> },
       {
         path: "/instamart",
         element: (

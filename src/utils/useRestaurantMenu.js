@@ -11,23 +11,27 @@ const useRestaurantMenu = (resId) => {
     data?.data?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR.cards?.map(
       (item) => {
         item?.card?.card?.itemCards?.map((innerItem) => {
-          // console.log(innerItem?.card?.info);
+          console.log(innerItem?.card?.info);
           const {
             name,
             price,
+            defaultPrice,
             imageId,
             description,
             itemAttribute,
             id: menuItemId,
           } = innerItem?.card?.info;
-          // console.log({ name, price, imageId, description, itemAttribute });
+          //console.log({ name, price, imageId, description, itemAttribute });
+
           newData.push({
             name,
-            price,
+            price: price / 100,
+            defaultPrice: defaultPrice / 100,
             imageId,
             description,
             itemAttribute,
             menuItemId,
+            itemAttribute,
           });
         });
       }

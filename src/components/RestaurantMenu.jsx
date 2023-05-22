@@ -5,13 +5,17 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 import { useDispatch } from "react-redux";
 import { addItem } from "../utils/redux/cartSlice";
 import BodyShimmer from "./BodyShimmer";
+import VegIcon from "../utils/assets/veg-icon.svg";
+import NonVegIcon from "../utils/assets/non-veg-icon.svg";
 import RestaurantMenuShimmer from "./RestaurantMenuShimmer";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const RestaurantMenu = () => {
   const params = useParams();
   // const [restaurants, setRestaurants] = useState(null);
   const { resId } = params;
   const [restaurantsMenus, restaurantHeadData] = useRestaurantMenu(resId);
-  console.log("Initial", restaurantsMenus);
+
   const {
     name: restaurantName,
     areaName: restaurantAreaName,
@@ -21,25 +25,32 @@ const RestaurantMenu = () => {
     totalRatingsString,
     sla,
     costForTwoMessage,
-  } = restaurantHeadData;
+  } = restaurantHeadData || {};
   const slaString = sla?.slaString;
   const lastMileTravel = sla?.lastMileTravel;
   const dispatch = useDispatch();
   const handleAddItem = (menu) => {
-    let { name, price } = menu;
-    if (price) {
-      price = price / 100;
-    } else {
-      price = 300;
-    }
+    let { name, price, menuItemId, defaultPrice, itemAttribute } = menu;
     dispatch(
       addItem({
         name,
         price,
+        defaultPrice,
         quantity: 1,
-        lastMileTravel,
+        menuItemId,
+        itemAttribute,
       })
     );
+    toast.success("Item Added to Cart Successfully!", {
+      position: "bottom-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   };
   // return <RestaurantMenuShimmer />;
   return (
@@ -50,7 +61,7 @@ const RestaurantMenu = () => {
             <h1 className="font-bold text-2xl text-gray-700">
               {restaurantName}
             </h1>
-            <span className="text-gray-500 text-sm">{cuisines?.join(" ")}</span>
+            <span className="text-gray-500 text-sm">{cuisines?.join(",")}</span>
             <div>
               <span className="text-gray-500 text-sm">
                 {restaurantAreaName},{" "}
@@ -73,25 +84,32 @@ const RestaurantMenu = () => {
       </div>
 
       <div>
-        {restaurantsMenus?.map((menu) => (
+        {restaurantsMenus?.map((menu, id) => (
           <div
             className="flex items-center justify-center"
-            key={menu?.menuItemId}
+            // key={menu?.menuItemId}
+            key={id}
           >
             <div className="flex border border-y-gray-400 border-x-0 m-2  justify-between w-1/2">
               <div className="mt-4">
                 {menu?.itemAttribute?.vegClassifier === "VEG" ? (
                   <span className="text-green-600 font-semibold text-xs">
-                    Veg
+                    <img src={VegIcon} alt="veg-icon" className="w-6 h-6" />
                   </span>
                 ) : (
                   <span className="text-red-600 font-semibold text-xs">
-                    Non Veg
+                    <img
+                      src={NonVegIcon}
+                      alt="non-veg-icon"
+                      className="w-6 h-6"
+                    />
                   </span>
                 )}
 
                 <h1 className="font-semibold">{menu?.name}</h1>
-                <h2 className="text-sm">₹{menu?.price / 100 || "220"}</h2>
+                <h2 className="text-sm">
+                  ₹{menu?.price || menu?.defaultPrice}
+                </h2>
                 <h3 className="text-gray-400 text-xs mt-4">
                   {menu.description}
                 </h3>
@@ -113,6 +131,18 @@ const RestaurantMenu = () => {
           </div>
         ))}
       </div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss={false}
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 };

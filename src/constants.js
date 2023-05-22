@@ -1,10 +1,19 @@
 export const IMG_CDN_URL =
-  "https://corsproxy.io/?https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
+  "https://corsproxy.io/?" +
+  encodeURIComponent(
+    "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
+  );
 export const restaurantHomeDataUrl =
-  "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5904779&lng=73.7271909&page_type=DESKTOP_WEB_LISTING";
+  "https://corsproxy.io/?" +
+  encodeURIComponent(
+    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.5904779&lng=73.7271909&page_type=DESKTOP_WEB_LISTING"
+  );
 
 export const FETCH_MENU_URL =
-  "https://corsproxy.io/?https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId=";
+  "https://corsproxy.io/?" +
+  encodeURIComponent(
+    "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId="
+  );
 export const restaurantList = [
   {
     type: "restaurant",
@@ -963,3 +972,12 @@ export const restaurantList = [
     subtype: "basic",
   },
 ];
+
+export const socialMediaLinks = {
+  linkedIn:
+    "https://www.linkedin.com/in/sai-surya-teja-chavatapalli-342aa418b/",
+  instagram: "https://www.instagram.com/iam_surya_tej/",
+  twitter: "https://twitter.com/saisuryateja8",
+  facebook:
+    "https://www.facebook.com/people/Sai-Surya-Teja/pfbid02WDL93QjaVucS8A8bmTfghQSHtG3ApFX1gw6GcfsEMzcMuKs9hiTXUW25gwXzkjswl/",
+};

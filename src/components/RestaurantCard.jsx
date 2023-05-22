@@ -1,9 +1,8 @@
 import { useContext } from "react";
 import { IMG_CDN_URL } from "../constants";
 import UserContext from "../utils/context/UserContext";
-import StarRateIcon from "@mui/icons-material/StarRate";
+import StarIcon from "@mui/icons-material/Star";
 const RestaurantCard = (props) => {
-  console.log({ props });
   const {
     name,
     cuisines,
@@ -26,10 +25,10 @@ const RestaurantCard = (props) => {
       <div className="w-full my-2">
         <span
           className={`${
-            parseFloat(avgRating) >= 4 ? "bg-green-700" : "bg-orange-400"
-          } text-white items-center h-2 rounded-sm pb-1`}
+            parseFloat(avgRating) >= 4 ? "bg-lightgreen" : "bg-lightorange"
+          } text-white items-center  rounded-sm pb-1`}
         >
-          <StarRateIcon className="text-[2px] h-[2px]" />
+          <StarIcon className="text-white text-[1px]" />
           <span className="mx-2 text-xs">{avgRating}</span>
         </span>
         <span className="text-xs mx-2">. {slaString} </span>

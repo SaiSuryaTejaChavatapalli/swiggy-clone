@@ -5,6 +5,7 @@ import { useContext, useState } from "react";
 import UserContext from "../utils/context/UserContext";
 import { useSelector } from "react-redux";
 import LogoutIcon from "@mui/icons-material/Logout";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 const Title = () => (
   <a href="/">
     <img
@@ -28,34 +29,56 @@ const Header = () => {
       <div className="mr-3">
         <ul className="flex py-10">
           <li className="px-2">
-            <Link to="/">Home</Link>
+            <Link to="/" className="text-gray-700 hover:text-orangehover">
+              HOME
+            </Link>
           </li>
           <li className="px-2">
-            <Link to="/about">About</Link>
+            <Link to="/about" className="text-gray-700 hover:text-orangehover">
+              ABOUT
+            </Link>
           </li>
           <li className="px-2">
-            <Link to="/contact">Contact</Link>
+            <Link
+              to="/contact"
+              className="text-gray-700 hover:text-orangehover"
+            >
+              CONTACT
+            </Link>
+          </li>
+          <li className="px-2">
+            <Link
+              to="/instamart"
+              className="text-gray-700 hover:text-orangehover"
+            >
+              INSTAMART
+            </Link>
           </li>
           <li className="px-2">
             <Link to="/cart" data-testid="cart">
-              Cart
-              <sup className="font-bold text-orange-500 border border-orange-500 p-1 rounded-full ml-0">
+              <ShoppingCartOutlinedIcon className="text-gray-700 hover:text-orangehover" />
+              <sup className="font-bold text-white border border-green-500 bg-lightgreen p-1 rounded-full ml-0">
                 {itemsList.length}
               </sup>
             </Link>
           </li>
-          <li className="px-2">
-            <Link to="/instamart">Instamart</Link>
-          </li>
           {isLoggedIn === true ? (
             <li className="px-2">
-              <span className="mr-2">{user.name}</span>
+              <span className="mr-2 hover:text-orangehover">{user.name}</span>
               <span onClick={() => setIsLoggedIn(!isLoggedIn)}>
-                <LogoutIcon className="text-[5px] text-gray-500" title />
+                <LogoutIcon
+                  className="text-[5px] text-gray-700 cursor-pointer"
+                  title
+                />
               </span>
             </li>
           ) : (
-            <div onClick={() => setIsLoggedIn(!isLoggedIn)}>Login</div>
+            <div
+              onClick={() => setIsLoggedIn(!isLoggedIn)}
+              className="cursor-pointer"
+            >
+              Login
+            </div>
           )}
 
           <li>

@@ -5,6 +5,8 @@ import SendIcon from "@mui/icons-material/Send";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Contact = () => {
   const form = useForm({
     defaultValues: {
@@ -29,9 +31,20 @@ const Contact = () => {
       .then(
         (result) => {
           console.log(result.text);
+          toast.success("Thanks for contacting us,We will get back to you!", {
+            position: "bottom-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
         },
         (error) => {
           console.log(error.text);
+          toast.error("Something went wrong,Try again!");
         }
       );
   };
@@ -115,6 +128,18 @@ const Contact = () => {
           </Button>
         </div>
       </form>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+      />
     </>
   );
 };

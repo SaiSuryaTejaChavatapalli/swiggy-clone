@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const ErrorFallback = () => {
   return (
     <div className="flex justify-center items-center my-auto">
@@ -12,9 +14,11 @@ const ErrorFallback = () => {
           <p className="text-gray-400">
             Sorry! This should not have happened. Please retry.
           </p>
-          <button className="bg-[#fc8019] text-white p-2 font-semibold w-auto h-10 px-5 text-sm">
-            RETRY
-          </button>
+          <Link to="/">
+            <button className="bg-[#fc8019] text-white p-2 font-semibold w-auto h-10 px-5 text-sm">
+              RETRY
+            </button>
+          </Link>
         </div>
       </div>
     </div>

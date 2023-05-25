@@ -10,6 +10,7 @@ import AddressField from "./AddressField";
 import PaymentField from "./PaymentField";
 import VegIcon from "../utils/assets/veg-icon.svg";
 import NonVegIcon from "../utils/assets/non-veg-icon.svg";
+import NoCartFallback from "./NoCartFallback";
 const CartPage = () => {
   const dispatch = useDispatch();
   const itemsList = useSelector((store) => store.cart.items);
@@ -20,6 +21,7 @@ const CartPage = () => {
   const deliveryPrice = quantityTotal * 5;
   const gstAndRestaurantCharges = quantityTotal * 3;
   const toPay = itemTotal + deliveryPrice + gstAndRestaurantCharges;
+  if (itemsList.length === 0) return <NoCartFallback />;
   return (
     <>
       <div className="flex p-5 w-full gap-4 bg-gray-100">
@@ -30,55 +32,57 @@ const CartPage = () => {
           ></CustomizedAccordions>
         </div>
         <div className="flex items-center justify-center w-2/3 ">
-          <div className="border border-black bg-white h-full flex flex-col items-start p-5 rounded-lg">
+          <div className="border border-black bg-white h-full flex flex-col items-start p-6 rounded-lg ">
             <div className="flex flex-col justify-between w-full">
               <h1 className="font-bold text-gray-600">Items:</h1>
-              {itemsList.map((item, index) => {
-                console.log({ item });
-                return (
-                  <div
-                    className="flex justify-between  items-center m-1 "
-                    key={index}
-                  >
-                    <div className="w-52 text-sm flex items-center justify-start gap-2">
-                      {item?.itemAttribute?.vegClassifier === "VEG" ? (
-                        <img src={VegIcon} alt="veg-icon" className="w-4" />
-                      ) : (
-                        <img
-                          src={NonVegIcon}
-                          alt="non-veg-icon"
-                          className="w-4"
-                        />
-                      )}
-                      <span className="justify-start">{item.name}</span>
-                    </div>
-                    <div className="border border-gray-600 justify-start">
-                      <button
-                        className=" p-1 "
-                        onClick={() => dispatch(removeItem(item))}
-                      >
-                        -
-                      </button>
-                      <span className=" text-green-700 font-bold">
-                        {item.quantity}
-                      </span>
-                      <button
-                        className="p-1 text-green-700 font-bold"
-                        onClick={() => dispatch(addItem(item))}
-                      >
-                        +
-                      </button>
-                    </div>
+              <div className="flex flex-col">
+                {itemsList.map((item, index) => {
+                  console.log({ item });
+                  return (
+                    <div
+                      className="flex justify-between  items-start m-1 "
+                      key={index}
+                    >
+                      <div className="w-96 text-sm flex items-center justify-start gap-2">
+                        {item?.itemAttribute?.vegClassifier === "VEG" ? (
+                          <img src={VegIcon} alt="veg-icon" className="w-4" />
+                        ) : (
+                          <img
+                            src={NonVegIcon}
+                            alt="non-veg-icon"
+                            className="w-4"
+                          />
+                        )}
+                        <span className="justify-start">{item.name}</span>
+                      </div>
+                      <div className="border border-gray-600 flex justify-between items-center w-16 ">
+                        <button
+                          className=" p-1 "
+                          onClick={() => dispatch(removeItem(item))}
+                        >
+                          -
+                        </button>
+                        <span className=" text-green-700 font-bold">
+                          {item.quantity}
+                        </span>
+                        <button
+                          className="p-1 text-green-700 font-bold"
+                          onClick={() => dispatch(addItem(item))}
+                        >
+                          +
+                        </button>
+                      </div>
 
-                    <span>
-                      {item.quantity} x ₹{item.price || item.defaultPrice}
-                    </span>
-                    <span>
-                      ₹{(item.price || item.defaultPrice) * item.quantity}
-                    </span>
-                  </div>
-                );
-              })}
+                      <span className="w-20">
+                        {item.quantity} x ₹{item.price || item.defaultPrice}
+                      </span>
+                      <span className="w-10">
+                        ₹{(item.price || item.defaultPrice) * item.quantity}
+                      </span>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
             {/* <div
             onClick={() => {

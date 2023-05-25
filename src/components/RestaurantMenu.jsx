@@ -12,10 +12,12 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const RestaurantMenu = () => {
   const params = useParams();
+
   // const [restaurants, setRestaurants] = useState(null);
   const { resId } = params;
   const [restaurantsMenus, restaurantHeadData] = useRestaurantMenu(resId);
 
+  // console.log("res menu", restaurantsMenus);
   const {
     name: restaurantName,
     areaName: restaurantAreaName,
@@ -52,7 +54,9 @@ const RestaurantMenu = () => {
       theme: "light",
     });
   };
-  // return <RestaurantMenuShimmer />;
+
+  if (Object.keys(restaurantsMenus?.[0]).length === 0)
+    return <RestaurantMenuShimmer />;
   return (
     <>
       <div className="flex justify-center items-center mt-10">
@@ -90,7 +94,7 @@ const RestaurantMenu = () => {
             // key={menu?.menuItemId}
             key={id}
           >
-            <div className="flex border border-y-gray-400 border-x-0 m-2  justify-between w-1/2">
+            <div className="flex border border-y-gray-400 border-x-0 m-2  justify-between w-1/2 py-3">
               <div className="mt-4">
                 {menu?.itemAttribute?.vegClassifier === "VEG" ? (
                   <span className="text-green-600 font-semibold text-xs">

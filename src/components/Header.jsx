@@ -22,6 +22,8 @@ const Header = () => {
   const isOnline = useOnline();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const itemsList = useSelector((store) => store.cart.items);
+  const totalQuantity = itemsList.reduce((acc, curr) => acc + curr.quantity, 0);
+
   const { user } = useContext(UserContext);
   return (
     <div className="flex justify-between shadow-md my-0 mr-3">
@@ -58,7 +60,7 @@ const Header = () => {
             <Link to="/cart" data-testid="cart">
               <ShoppingCartOutlinedIcon className="text-gray-700 hover:text-orangehover" />
               <sup className="font-bold text-white border border-green-500 bg-lightgreen p-1 rounded-full ml-0">
-                {itemsList.length}
+                {totalQuantity}
               </sup>
             </Link>
           </li>

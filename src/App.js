@@ -18,6 +18,7 @@ import Demo2 from "./components/Demo2";
 import RestaurantMenuShimmer from "./components/RestaurantMenuShimmer";
 import { Accordion } from "@mui/material";
 import CustomizedAccordions from "./utils/CustomizedAccordian";
+import ErrorFallback from "./components/ErrorFallback";
 // import Instamart from "./components/Instamart";
 
 const Instamart = lazy(() => import("./components/Instamart"));
@@ -62,6 +63,10 @@ const appRouter = createBrowserRouter([
             <Instamart />
           </Suspense>
         ),
+      },
+      {
+        path: "*",
+        element: <ErrorFallback />,
       },
     ],
   },

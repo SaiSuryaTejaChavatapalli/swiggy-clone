@@ -974,10 +974,12 @@ export const restaurantList = [
 ];
 
 export const socialMediaLinks = {
+  github: "https://github.com/SaiSuryaTejaChavatapalli",
   linkedIn:
     "https://www.linkedin.com/in/sai-surya-teja-chavatapalli-342aa418b/",
   instagram: "https://www.instagram.com/iam_surya_tej/",
   twitter: "https://twitter.com/saisuryateja8",
   facebook:
     "https://www.facebook.com/people/Sai-Surya-Teja/pfbid02WDL93QjaVucS8A8bmTfghQSHtG3ApFX1gw6GcfsEMzcMuKs9hiTXUW25gwXzkjswl/",
+  youtube: "https://www.youtube.com/@saisuryatejachavatapalli",
 };

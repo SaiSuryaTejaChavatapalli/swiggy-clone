@@ -1,6 +1,6 @@
 const RestaurantMenuShimmer = () => {
   return (
-    <div>
+    <div className="mt-9">
       {Array(20)
         .fill("")
         .map((item, index) => (

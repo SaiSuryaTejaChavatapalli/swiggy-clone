@@ -11,7 +11,6 @@ const useRestaurantMenu = (resId) => {
     data?.data?.cards?.[2]?.groupedCard?.cardGroupMap?.REGULAR.cards?.map(
       (item) => {
         item?.card?.card?.itemCards?.map((innerItem) => {
-          console.log(innerItem?.card?.info);
           const {
             name,
             price,

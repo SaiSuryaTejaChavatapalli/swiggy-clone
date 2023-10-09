@@ -3,14 +3,8 @@ import { IMG_CDN_URL } from "../constants";
 import UserContext from "../utils/context/UserContext";
 import StarIcon from "@mui/icons-material/Star";
 const RestaurantCard = (props) => {
-  const {
-    name,
-    cuisines,
-    avgRating,
-    cloudinaryImageId,
-    costForTwoString,
-    slaString,
-  } = props;
+  const { name, cuisines, avgRating, cloudinaryImageId, areaName, slaString } =
+    props;
 
   const { user } = useContext(UserContext);
   return (
@@ -31,8 +25,8 @@ const RestaurantCard = (props) => {
           <StarIcon className="text-white text-[1px]" />
           <span className="mx-2 text-xs">{avgRating}</span>
         </span>
-        <span className="text-xs mx-2">. {slaString} </span>
-        <span className="text-xs">. {costForTwoString} </span>
+        {/* <span className="text-xs mx-2">. {slaString} </span> */}
+        <span className="pl-2 text-lg">{areaName} </span>
       </div>
     </div>
   );

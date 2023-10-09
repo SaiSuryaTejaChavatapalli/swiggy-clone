@@ -7,7 +7,7 @@ import BodyShimmer from "./BodyShimmer";
 import { restaurantHomeDataUrl } from "../constants";
 function filterData(searchText, restaurants) {
   const filteredData = restaurants.filter((restaurant) => {
-    return restaurant?.data?.name
+    return restaurant?.info?.name
       ?.toLowerCase()
       ?.includes(searchText.toLowerCase());
   });
@@ -26,10 +26,21 @@ const Body = () => {
 
   async function getRestaurants() {
     const data = await fetch(restaurantHomeDataUrl);
+    console.log("Data", data);
     const json = await data.json();
+    console.log(
+      "JSON",
+      json?.data.cards[5]?.card.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setAllRestaurants(
+      json?.data.cards[5]?.card.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredRestaurants(
+      json?.data.cards[5]?.card.card?.gridElements?.infoWithStyle?.restaurants
+    );
     //optional chaining
-    setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
-    setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    // setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
+    // setFilteredRestaurants(json?.data?.cards[2]?.data?.data?.cards);
   }
 
   const isOnline = useOnline();
@@ -68,10 +79,10 @@ const Body = () => {
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link
-              to={`/restaurants/${restaurant?.data?.id}`}
-              key={restaurant.data.id}
+              to={`/restaurants/${restaurant?.info?.id}`}
+              key={restaurant?.info?.id}
             >
-              <RestaurantCard {...restaurant?.data} />
+              <RestaurantCard {...restaurant?.info} />
             </Link>
           );
         })}

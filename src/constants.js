@@ -1,8 +1,6 @@
 export const IMG_CDN_URL =
-  "https://corsproxy.io/?" +
-  encodeURIComponent(
-    "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/"
-  );
+  "https://media-assets.swiggy.com/swiggy/image/upload/";
+
 export const restaurantHomeDataUrl =
   "https://corsproxy.io/?" +
   encodeURIComponent(

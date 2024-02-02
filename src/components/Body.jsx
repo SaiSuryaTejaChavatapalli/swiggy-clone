@@ -5,6 +5,7 @@ import RestaurantCard from "./RestaurantCard";
 import useOnline from "../utils/useOnline";
 import BodyShimmer from "./BodyShimmer";
 import { restaurantHomeDataUrl } from "../constants";
+import { MainPageData } from "../test";
 function filterData(searchText, restaurants) {
   const filteredData = restaurants.filter((restaurant) => {
     return restaurant?.info?.name
@@ -25,18 +26,20 @@ const Body = () => {
   }, []);
 
   async function getRestaurants() {
-    const data = await fetch(restaurantHomeDataUrl);
-    console.log("Data", data);
-    const json = await data.json();
+    // const data = await fetch(restaurantHomeDataUrl);
+    // console.log("Data", data);
+    // const json = await data.json();
+    const json = MainPageData;
+    console.log("JSSS", json.data);
     console.log(
       "JSON",
-      json?.data.cards[5]?.card.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data.cards[4]?.card.card?.gridElements?.infoWithStyle?.restaurants
     );
     setAllRestaurants(
-      json?.data.cards[5]?.card.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data.cards[4]?.card.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurants(
-      json?.data.cards[5]?.card.card?.gridElements?.infoWithStyle?.restaurants
+      json?.data.cards[4]?.card.card?.gridElements?.infoWithStyle?.restaurants
     );
     //optional chaining
     // setAllRestaurants(json?.data?.cards[2]?.data?.data?.cards);
@@ -48,7 +51,7 @@ const Body = () => {
     return <h1>Oops! Please Check your Internet Connection</h1>;
   }
 
-  return filteredRestaurants.length === 0 ? (
+  return filteredRestaurants?.length === 0 ? (
     <BodyShimmer />
   ) : (
     <div className="search-container p-5 mx-16 ">
@@ -76,7 +79,7 @@ const Body = () => {
         className="restaurant-list flex flex-wrap justify-around"
         data-testid="res-list"
       >
-        {filteredRestaurants.map((restaurant) => {
+        {filteredRestaurants?.map((restaurant) => {
           return (
             <Link
               to={`/restaurants/${restaurant?.info?.id}`}

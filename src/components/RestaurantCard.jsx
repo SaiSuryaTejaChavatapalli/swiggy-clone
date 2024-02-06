@@ -12,7 +12,7 @@ const RestaurantCard = (props) => {
       <img
         src={IMG_CDN_URL + cloudinaryImageId}
         alt="restraunt-card"
-        className="object-cover rounded-sm"
+        className="object-cover rounded-sm h-1/2 w-full"
       />
       <h2 className="text-base text-gray-700 font-semibold">{name}</h2>
       <h3 className="text-sm text-gray-500">{cuisines.join(", ")}</h3>

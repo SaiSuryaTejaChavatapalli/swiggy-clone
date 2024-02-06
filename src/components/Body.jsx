@@ -5,7 +5,7 @@ import RestaurantCard from "./RestaurantCard";
 import useOnline from "../utils/useOnline";
 import BodyShimmer from "./BodyShimmer";
 import { restaurantHomeDataUrl } from "../constants";
-import { MainPageData } from "../test";
+import { MainPageData } from "../mainRestaurantData";
 function filterData(searchText, restaurants) {
   const filteredData = restaurants.filter((restaurant) => {
     return restaurant?.info?.name

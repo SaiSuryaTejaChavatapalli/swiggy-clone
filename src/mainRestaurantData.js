@@ -3780,6 +3780,245 @@ export const MainPageData = {
                     widgetId:
                       "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
                   },
+                  {
+                    info: {
+                      id: "5691",
+                      name: "Smoke House Deli",
+                      cloudinaryImageId: "f5rgvghgew6hmnmbg3rn",
+                      locality: "Bandra Kurla Complex",
+                      areaName: "Bandra Kurla Complex",
+                      costForTwo: "₹600 for two",
+                      cuisines: ["American", "Italian", "European"],
+                      avgRating: 4.4,
+                      parentId: "874",
+                      avgRatingString: "4.4",
+                      totalRatingsString: "5K+",
+                      sla: {
+                        deliveryTime: 33,
+                        lastMileTravel: 1.5,
+                        serviceability: "SERVICEABLE",
+                        slaString: "30-35 mins",
+                        lastMileTravelString: "1.5 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2024-02-02 23:30:00",
+                        opened: true,
+                      },
+                      badges: {
+                        imageBadges: [
+                          {
+                            imageId: "newg.png",
+                            description: "Gourmet",
+                          },
+                        ],
+                      },
+                      isOpen: true,
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {
+                            badgeObject: [
+                              {
+                                attributes: {
+                                  description: "Gourmet",
+                                  imageId: "newg.png",
+                                },
+                              },
+                            ],
+                          },
+                          textBased: {},
+                          textExtendedBadges: {},
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "₹150 OFF",
+                        subHeader: "ABOVE ₹799",
+                        discountTag: "FLAT DEAL",
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      restaurantOfferPresentationInfo: {},
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/smoke-house-deli-bandra-kurla-complex-mumbai-5691",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "5172",
+                      name: "Theobroma",
+                      cloudinaryImageId: "b033728dcb0101ceb19bff0e1e1f6474",
+                      locality: "Bandra Kurla Complex",
+                      areaName: "Bandra Kurla Complex",
+                      costForTwo: "₹400 for two",
+                      cuisines: ["Bakery", "Desserts"],
+                      avgRating: 4.6,
+                      parentId: "1040",
+                      avgRatingString: "4.6",
+                      totalRatingsString: "10K+",
+                      sla: {
+                        deliveryTime: 23,
+                        lastMileTravel: 2.5,
+                        serviceability: "SERVICEABLE",
+                        slaString: "20-25 mins",
+                        lastMileTravelString: "2.5 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2024-02-02 23:59:00",
+                        opened: true,
+                      },
+                      badges: {
+                        textExtendedBadges: [
+                          {
+                            iconId: "v1705582451/Ratnesh_Badges/Listing_HR.png",
+                            shortDescription: "Perfect Cake Delivery",
+                            fontColor: "#7E808C",
+                          },
+                        ],
+                      },
+                      isOpen: true,
+                      type: "P",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {},
+                          textBased: {},
+                          textExtendedBadges: {
+                            badgeObject: [
+                              {
+                                attributes: {
+                                  description: "",
+                                  fontColor: "#7E808C",
+                                  iconId:
+                                    "v1705582451/Ratnesh_Badges/Listing_HR.png",
+                                  shortDescription: "Perfect Cake Delivery",
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      },
+                      aggregatedDiscountInfoV3: {
+                        header: "40% OFF",
+                        discountTag: "FLAT DEAL",
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      restaurantOfferPresentationInfo: {},
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/theobroma-bandra-kurla-complex-mumbai-5172",
+                      type: "WEBLINK",
+                    },
+                  },
+                  {
+                    info: {
+                      id: "320604",
+                      name: "Sequel",
+                      cloudinaryImageId: "ski4rmufwewbdjvslynn",
+                      locality: "Bandra East",
+                      areaName: "Bandra Kurla Complex",
+                      costForTwo: "₹1000 for two",
+                      cuisines: ["European", "Asian", "Salads", "Beverages"],
+                      avgRating: 4.3,
+                      parentId: "11116",
+                      avgRatingString: "4.3",
+                      totalRatingsString: "500+",
+                      sla: {
+                        deliveryTime: 36,
+                        lastMileTravel: 2.9,
+                        serviceability: "SERVICEABLE",
+                        slaString: "35-40 mins",
+                        lastMileTravelString: "2.9 km",
+                        iconType: "ICON_TYPE_EMPTY",
+                      },
+                      availability: {
+                        nextCloseTime: "2024-02-02 22:00:00",
+                        opened: true,
+                      },
+                      badges: {
+                        imageBadges: [
+                          {
+                            imageId: "newg.png",
+                            description: "Gourmet",
+                          },
+                        ],
+                        textExtendedBadges: [
+                          {
+                            iconId: "guiltfree/GF_Logo_android_3x",
+                            shortDescription: "brand",
+                            fontColor: "#7E808C",
+                          },
+                        ],
+                      },
+                      isOpen: true,
+                      aggregatedDiscountInfoV2: {},
+                      type: "F",
+                      badgesV2: {
+                        entityBadges: {
+                          imageBased: {
+                            badgeObject: [
+                              {
+                                attributes: {
+                                  description: "Gourmet",
+                                  imageId: "newg.png",
+                                },
+                              },
+                            ],
+                          },
+                          textBased: {},
+                          textExtendedBadges: {
+                            badgeObject: [
+                              {
+                                attributes: {
+                                  description: "",
+                                  fontColor: "#7E808C",
+                                  iconId: "guiltfree/GF_Logo_android_3x",
+                                  shortDescription: "brand",
+                                },
+                              },
+                            ],
+                          },
+                        },
+                      },
+                      differentiatedUi: {
+                        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+                        differentiatedUiMediaDetails: {
+                          mediaType: "ADS_MEDIA_ENUM_IMAGE",
+                          lottie: {},
+                          video: {},
+                        },
+                      },
+                      reviewsSummary: {},
+                      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+                      restaurantOfferPresentationInfo: {},
+                    },
+                    analytics: {},
+                    cta: {
+                      link: "https://www.swiggy.com/restaurants/sequel-bandra-east-bandra-kurla-complex-mumbai-320604",
+                      type: "WEBLINK",
+                    },
+                  },
                 ],
                 theme: "SeoRestaurantListingGridWidget",
               },

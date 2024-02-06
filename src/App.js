@@ -19,6 +19,7 @@ import RestaurantMenuShimmer from "./components/RestaurantMenuShimmer";
 import { Accordion } from "@mui/material";
 import CustomizedAccordions from "./utils/CustomizedAccordian";
 import ErrorFallback from "./components/ErrorFallback";
+import { ScrollRestoration } from "react-router-dom";
 // import Instamart from "./components/Instamart";
 
 const Instamart = lazy(() => import("./components/Instamart"));
@@ -39,6 +40,7 @@ const AppLayout = () => {
           <Header />
           <Outlet />
           <Footer />
+          <ScrollRestoration />
         </div>
       </UserContext.Provider>
     </Provider>
